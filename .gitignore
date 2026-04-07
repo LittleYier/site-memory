@@ -1,0 +1,10 @@
+node_modules/
+tmp/
+runtime/
+dist/
+*.log
+*.png
+.DS_Store
+Thumbs.db
+
+skills/site-memory/tests/

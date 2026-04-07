@@ -1,0 +1,13 @@
+{
+  "name": "site-memory",
+  "version": "0.1.0",
+  "description": "Persistent memory for browser automation agents - repeated visits get faster",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node skills/site-memory/tests/test-memory-core.mjs",
+    "bench:download": "cd skills/site-memory/tests/webvoyager && curl -sL https://raw.githubusercontent.com/MinorJerry/WebVoyager/main/data/WebVoyager_data.jsonl -o tasks.jsonl && curl -sL https://raw.githubusercontent.com/MinorJerry/WebVoyager/main/data/reference_answer.json -o reference_answer.json && echo 'Downloaded 643 tasks'",
+    "bench:list": "node skills/site-memory/tests/webvoyager/run.mjs --list",
+    "bench:eval": "node skills/site-memory/tests/webvoyager/eval.mjs"
+  }
+}

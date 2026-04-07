@@ -1,0 +1,3 @@
+[submodule "skills/site-memory/vendor/chrome-cdp-skill"]
+	path = skills/site-memory/vendor/chrome-cdp-skill
+	url = https://github.com/pasky/chrome-cdp-skill.git
