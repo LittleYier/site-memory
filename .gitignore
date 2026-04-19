@@ -6,5 +6,6 @@ dist/
 *.png
 .DS_Store
 Thumbs.db
+.claude/
 
 skills/site-memory/tests/

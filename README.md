@@ -2,9 +2,20 @@
 
 **English** | [中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-Persistent memory for browser automation agents. Learns site knowledge automatically, updates after every visit, and gets better over time.
+Browser automation agents forget everything between runs. Same site, same page structure to figure out, every single time. Wasted time, wasted tokens.
 
-In the WebVoyager benchmark, site-memory cuts the total cost of browser automation by 70% to 90%, making it 4x faster, same accuracy.
+site-memory lets your agent remember sites it has visited and go straight to the goal. 
+
+On the WebVoyager benchmark, it cuts cost by 70% to 90% and makes tasks 4x faster with no loss in accuracy.
+
+- Learns site knowledge automatically
+- Updates after every visit
+- Gets better over time
+
+## Why you need site-memory
+
+Without site-memory, booking a hotel on Booking.com takes 35 steps and nearly 8 minutes. 
+With site-memory, the second run takes 5 steps and 30 seconds. Stable sites get even faster after a few visits.
 
 ## Install
 
