@@ -2,7 +2,7 @@
 
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'fs';
 import { homedir } from 'os';
-import { join, normalize, relative, resolve, sep } from 'path';
+import { isAbsolute, join, relative, resolve, sep } from 'path';
 import {
   HEADER_SCAN_LINE_LIMIT,
   INDEX_BYTE_LIMIT,
@@ -214,15 +214,10 @@ export function readIndex(memoryRoot) {
     : truncateIndex('');
 }
 
-function normalizeRootPrefix(root) {
-  const normalized = normalize(root);
-  const withSep = normalized.endsWith(sep) ? normalized : `${normalized}${sep}`;
-  return withSep.toLowerCase();
-}
-
 export function resolveMemoryPath(memoryRoot, relativePath) {
-  const absolutePath = normalize(resolve(memoryRoot, relativePath));
-  if (!absolutePath.toLowerCase().startsWith(normalizeRootPrefix(memoryRoot))) {
+  const absolutePath = resolve(memoryRoot, relativePath);
+  const rel = relative(memoryRoot, absolutePath);
+  if (!rel || rel === '..' || rel.startsWith(`..${sep}`) || isAbsolute(rel)) {
     throw new Error(`Memory path escapes runtime root: ${relativePath}`);
   }
   return absolutePath;

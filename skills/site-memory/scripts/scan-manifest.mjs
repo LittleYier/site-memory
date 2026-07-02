@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import { formatManifest } from './memory-core.mjs';
-import { getRuntimeContext, parseArgs, scanManifest } from './memory-core.mjs';
+import { formatManifest, getRuntimeContext, parseArgs, scanManifest } from './memory-core.mjs';
 
 const args = parseArgs(process.argv.slice(2));
 const context = getRuntimeContext({
